@@ -1,4 +1,4 @@
-﻿// Title: Toy robot code challenge for SICK sensor technologies
+// Title: Toy robot code challenge for SICK sensor technologies
 // Author: Alex Linden
 // Created: 24/11/2021
 // Function prototypes
@@ -12,9 +12,9 @@ using namespace std;
 class myRobot
 {
 public:
-	myRobot(unsigned short int X, unsigned short int Y, string dir);
+	myRobot();
 	~myRobot();
-	void place(unsigned short int new_x, unsigned short int new_y, string new_direction, myRobot newRobot);
+	void place(unsigned short int new_x, unsigned short int new_y, string new_direction);
 	void move();
 	void dontFall();
 	void report();
