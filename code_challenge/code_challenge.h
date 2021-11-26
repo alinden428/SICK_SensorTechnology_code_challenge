@@ -15,7 +15,7 @@ public:
 	myRobot();
 	~myRobot();
 	void place(unsigned short int new_x, unsigned short int new_y, string new_direction);
-	void move();
+	myRobot move();
 	bool dontFall();
 	void report();
 private:
