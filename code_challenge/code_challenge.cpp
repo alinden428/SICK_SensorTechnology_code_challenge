@@ -8,30 +8,17 @@
 
 using namespace std;
 
-myRobot::myRobot()
+myRobot::myRobot() : x {0}, y {0}, direction{""}
 {
-	x = 0;
-	y = 0;
-	direction = "";
 }
 
 myRobot::~myRobot() {}
 
 void myRobot::place(unsigned short int new_x, unsigned short int new_y, string new_direction)
 {	
-	//if (this->dontFall()) {
-		//assign robot coordinates to chosen location
 		this->x = new_x;
 		this->y = new_y;
 		this->direction = new_direction;
-	//}
-	//else 
-	//{
-	//	//In this path do not modify this->x,y,dir
-	//	cout << "You must place the robot on the table within 0-4,0-4,XXXX" << endl;
-
-	//}
-
 }
 
 myRobot myRobot::move()
