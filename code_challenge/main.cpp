@@ -16,18 +16,14 @@ void parseInput()
 
 int main()
 {
-	int my_x = 3;
-	int my_y = 3;
-	string input = "RIGHT";
-	string my_dir = "WEST";
+	//Construct an object of class myRobot
 	myRobot newRobot = myRobot();
-	newRobot.place(my_x, my_y, my_dir);
-	newRobot.report();
-	newRobot = newRobot.move();
-	newRobot.report();
-	newRobot.rotate(input);
-	newRobot.report();
-	//while (!(cin >> ))
+
+	cout << "Welcome to the toy robot simulator." << endl
+		<< "Exit the program by typing exit or e" << endl
+		<< "Please Place your robot on the table." << endl;
+
+		cin >> newRobot;
 
 }
 

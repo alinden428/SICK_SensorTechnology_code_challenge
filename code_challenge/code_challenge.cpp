@@ -5,10 +5,11 @@
 
 #include "code_challenge.h"
 #include "iostream"
+#include "regex"
 
 using namespace std;
 
-myRobot::myRobot() : x {0}, y {0}, direction{""}
+myRobot::myRobot() : x {10}, y {10}, direction{""}
 {
 }
 
@@ -96,4 +97,42 @@ bool myRobot::dontFall()
 void myRobot::report()
 {
 	cout << this->x << "," << this->y << "," + this->direction << endl;
+}
+
+istream& operator>>(istream& aInstream, myRobot& newRobot)
+{	
+	string new_x, new_y, dir;
+	regex placeRegex("[pP][lL][aA][cC][eE]\\s[0-4][,][0-4][,][nNsSwWeE][a-zA-Z]{1,4}");
+	regex funcRegex("[a-zA-Z]{1,6}");
+	string input = "";
+
+	cin.clear();			//clean input buffer
+	getline(cin, input);	//accept user input with whitespace
+
+	if (input == "exit") {
+		exit(0);
+	}
+
+	//robot is inialised at 10,10. This is off the table. Only accept report() move() or rotate() after place()
+	if (newRobot.x == 10 || newRobot.y == 10) 
+	{
+		if (regex_match(input, placeRegex))
+		{
+			//cout << "MATCH!" << endl;
+			//Explicit input we know x and y will be string index 6 and 8
+			new_x.append(input, 6, 1);	
+			new_y.append(input, 8, 1);
+			dir.append(input, 10, 5);
+			for (auto& x : dir) x = toupper(x);				//captilise e.g. north to NORTH
+			//cout << new_x << endl << new_y << endl << dir << endl;
+			
+			newRobot.place(stoi(new_x), stoi(new_y), dir);	//place() at user input
+		}
+	}
+	else
+	{
+
+	}
+
+	return aInstream;
 }

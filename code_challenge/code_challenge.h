@@ -19,6 +19,7 @@ public:
 	bool dontFall();
 	void rotate(string leftOrRight);
 	void report();
+	friend istream& operator>>(istream& aInstream, myRobot& newRobot);
 private:
 	unsigned short int x;
 	unsigned short int y;
