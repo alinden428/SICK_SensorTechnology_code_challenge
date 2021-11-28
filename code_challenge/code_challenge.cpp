@@ -108,7 +108,8 @@ istream& operator>>(istream& aInstream, myRobot& newRobot)
 	cin.clear();			//clean input buffer
 	getline(cin, input);	//accept user input with whitespace
 
-	if (input == "exit") {
+	if (input == "exit" || input == "e") 
+	{
 		exit(0);
 	}
 
