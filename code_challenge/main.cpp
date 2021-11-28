@@ -8,12 +8,6 @@
 
 using namespace std;
 
-
-void parseInput()
-{
-
-}
-
 int main()
 {
 	//Construct an object of class myRobot
@@ -22,9 +16,10 @@ int main()
 	cout << "Welcome to the toy robot simulator." << endl
 		<< "Exit the program by typing exit or e" << endl
 		<< "Please Place your robot on the table." << endl;
-
+	for (;;)
+	{
 		cin >> newRobot;
-
+	}
 }
 
 

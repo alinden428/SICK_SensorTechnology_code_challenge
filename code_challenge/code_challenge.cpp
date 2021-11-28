@@ -101,10 +101,9 @@ void myRobot::report()
 
 istream& operator>>(istream& aInstream, myRobot& newRobot)
 {	
-	string new_x, new_y, dir;
+	string new_x, new_y, dir, input;
 	regex placeRegex("[pP][lL][aA][cC][eE]\\s[0-4][,][0-4][,][nNsSwWeE][a-zA-Z]{1,4}");
 	regex funcRegex("[a-zA-Z]{1,6}");
-	string input = "";
 
 	cin.clear();			//clean input buffer
 	getline(cin, input);	//accept user input with whitespace
@@ -118,20 +117,32 @@ istream& operator>>(istream& aInstream, myRobot& newRobot)
 	{
 		if (regex_match(input, placeRegex))
 		{
-			//cout << "MATCH!" << endl;
 			//Explicit input we know x and y will be string index 6 and 8
 			new_x.append(input, 6, 1);	
 			new_y.append(input, 8, 1);
 			dir.append(input, 10, 5);
 			for (auto& x : dir) x = toupper(x);				//captilise e.g. north to NORTH
-			//cout << new_x << endl << new_y << endl << dir << endl;
-			
 			newRobot.place(stoi(new_x), stoi(new_y), dir);	//place() at user input
 		}
 	}
-	else
+	else 
 	{
-
+		if (regex_match(input, funcRegex))
+		{
+			for (auto& x : input) x = toupper(x);				//captilise input string
+			if (input == "MOVE") newRobot = newRobot.move();
+			if (input == "LEFT") newRobot.rotate(input);
+			if (input == "RIGHT") newRobot.rotate(input);
+			if (input == "REPORT") newRobot.report();
+		}
+		if (regex_match(input, placeRegex))
+		{
+			new_x.append(input, 6, 1);
+			new_y.append(input, 8, 1);
+			dir.append(input, 10, 5);
+			for (auto& x : dir) x = toupper(x);				//captilise e.g. north to NORTH
+			newRobot.place(stoi(new_x), stoi(new_y), dir);	//place() at user input
+		}
 	}
 
 	return aInstream;
