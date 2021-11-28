@@ -17,9 +17,9 @@ myRobot::~myRobot() {}
 
 void myRobot::place(unsigned short int new_x, unsigned short int new_y, string new_direction)
 {	
-		this->x = new_x;
-		this->y = new_y;
-		this->direction = new_direction;
+	this->x = new_x;
+	this->y = new_y;
+	this->direction = new_direction;
 }
 
 myRobot myRobot::move()
@@ -110,7 +110,7 @@ istream& operator>>(istream& aInstream, myRobot& newRobot)
 
 	if (input == "exit" || input == "e") 
 	{
-		exit(0);
+		exit(0); //exit .exe
 	}
 
 	//robot is inialised at 10,10. This is off the table. Only accept report() move() or rotate() after place()
