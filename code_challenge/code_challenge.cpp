@@ -102,7 +102,7 @@ void myRobot::report()
 istream& operator>>(istream& aInstream, myRobot& newRobot)
 {	
 	string new_x, new_y, dir, input;
-	regex placeRegex("[pP][lL][aA][cC][eE]\\s[0-4][,][0-4][,][nNsSwWeE][a-zA-Z]{1,4}");
+	regex placeRegex("[pP][lL][aA][cC][eE]\\s[0-4][,][0-4][,][nNsSwWeE][a-zA-Z]{1,4}"); //explicit place 0,0,west
 	regex funcRegex("[a-zA-Z]{1,6}");
 
 	cin.clear();			//clean input buffer
@@ -140,7 +140,7 @@ istream& operator>>(istream& aInstream, myRobot& newRobot)
 			new_x.append(input, 6, 1);
 			new_y.append(input, 8, 1);
 			dir.append(input, 10, 5);
-			for (auto& x : dir) x = toupper(x);				//captilise e.g. north to NORTH
+			for (auto& x : dir) x = toupper(x);				//captilise input string 
 			newRobot.place(stoi(new_x), stoi(new_y), dir);	//place() at user input
 		}
 	}
