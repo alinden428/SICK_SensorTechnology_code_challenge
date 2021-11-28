@@ -94,7 +94,7 @@ bool myRobot::dontFall()
 
 }
 
-void myRobot::report()
+void myRobot::report()		//this could be implemented as << operator instead
 {
 	cout << this->x << "," << this->y << "," + this->direction << endl;
 }
@@ -102,7 +102,7 @@ void myRobot::report()
 istream& operator>>(istream& aInstream, myRobot& newRobot)
 {	
 	string new_x, new_y, dir, input;
-	regex placeRegex("[pP][lL][aA][cC][eE]\\s[0-4][,][0-4][,][nNsSwWeE][a-zA-Z]{1,4}"); //explicit place 0,0,west
+	regex placeRegex("[pP][lL][aA][cC][eE]\\s[0-4][,][0-4][,][nNsSwWeE][a-zA-Z]{1,4}"); //robot can only be placed within 5x5 unit table
 	regex funcRegex("[a-zA-Z]{1,6}");
 
 	cin.clear();			//clean input buffer
@@ -145,6 +145,5 @@ istream& operator>>(istream& aInstream, myRobot& newRobot)
 			newRobot.place(stoi(new_x), stoi(new_y), dir);	//place() at user input
 		}
 	}
-
 	return aInstream;
 }
