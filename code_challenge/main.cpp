@@ -9,17 +9,25 @@
 using namespace std;
 
 
+void parseInput()
+{
+
+}
 
 int main()
 {
-	int my_x = 0;
-	int my_y = 1;
-	string my_dir = "NORTH";
+	int my_x = 3;
+	int my_y = 3;
+	string input = "RIGHT";
+	string my_dir = "WEST";
 	myRobot newRobot = myRobot();
 	newRobot.place(my_x, my_y, my_dir);
 	newRobot.report();
-
-
+	newRobot = newRobot.move();
+	newRobot.report();
+	newRobot.rotate(input);
+	newRobot.report();
+	//while (!(cin >> ))
 
 }
 

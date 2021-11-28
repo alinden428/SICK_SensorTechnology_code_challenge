@@ -1,7 +1,4 @@
-﻿
-
-
-// Title: Toy robot code challenge for SICK sensor technologies
+﻿// Title: Toy robot code challenge for SICK sensor technologies
 // Author: Alex Linden
 // Created: 24/11/2021
 // Function implementation
@@ -22,18 +19,18 @@ myRobot::~myRobot() {}
 
 void myRobot::place(unsigned short int new_x, unsigned short int new_y, string new_direction)
 {	
-	if (this->dontFall()) {
+	//if (this->dontFall()) {
 		//assign robot coordinates to chosen location
 		this->x = new_x;
 		this->y = new_y;
 		this->direction = new_direction;
-	}
-	else 
-	{
-		//In this path do not modify this->x,y,dir
-		cout << "You must place the robot on the table within 0-4,0-4,XXXX";
+	//}
+	//else 
+	//{
+	//	//In this path do not modify this->x,y,dir
+	//	cout << "You must place the robot on the table within 0-4,0-4,XXXX" << endl;
 
-	}
+	//}
 
 }
 
@@ -59,21 +56,25 @@ void myRobot::rotate(string leftOrRight)
 	{
 		if (leftOrRight == "LEFT") this->direction = "WEST";
 		if (leftOrRight == "RIGHT") this->direction = "EAST";
+		return;
 	}
 	if (this->direction == "WEST")
 	{
 		if (leftOrRight == "LEFT") this->direction = "SOUTH";
 		if (leftOrRight == "RIGHT") this->direction = "NORTH";
+		return;
 	}
 	if (this->direction == "SOUTH")
 	{
 		if (leftOrRight == "LEFT") this->direction = "EAST";
 		if (leftOrRight == "RIGHT") this->direction = "WEST";
+		return;
 	}
 	if (this->direction == "EAST")
 	{
 		if (leftOrRight == "LEFT") this->direction = "NORTH";
 		if (leftOrRight == "RIGHT") this->direction = "SOUTH";
+		return;
 	}
 }
 
