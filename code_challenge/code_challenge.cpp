@@ -126,11 +126,11 @@ istream& operator>>(istream& aInstream, myRobot& newRobot)
 			newRobot.place(stoi(new_x), stoi(new_y), dir);	//place() at user input
 		}
 	}
-	else 
+	else if (newRobot.x != 10 && newRobot.y != 10)			
 	{
 		if (regex_match(input, funcRegex))
 		{
-			for (auto& x : input) x = toupper(x);				//captilise input string
+			for (auto& x : input) x = toupper(x);			//captilise input string
 			if (input == "MOVE") newRobot = newRobot.move();
 			if (input == "LEFT") newRobot.rotate(input);
 			if (input == "RIGHT") newRobot.rotate(input);
