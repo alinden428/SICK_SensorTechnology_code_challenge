@@ -223,7 +223,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Alex\Desktop\PROJECTS\build\ALL_BUILD.vcxproj">
+    <ProjectReference Include="C:\Users\Alex\Desktop\PROJECTS\build\_deps\googletest-build\googletest\ALL_BUILD.vcxproj">
       <Project>{8236F446-F58C-3188-AD8F-E67F9F7077F0}</Project>
       <Name>ALL_BUILD</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

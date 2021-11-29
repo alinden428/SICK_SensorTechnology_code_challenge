@@ -9,7 +9,7 @@
 
 using namespace std;
 
-myRobot::myRobot() : x{ 10 }, y{ 10 }, direction{ "" }
+myRobot::myRobot() : x{ 10 }, y{ 10 }, direction{ "" }, stringForTesting{ "" }
 {
 }
 
@@ -105,8 +105,16 @@ istream& operator>>(istream& aInstream, myRobot& newRobot)
 	regex placeRegex("[pP][lL][aA][cC][eE]\\s[0-4][,][0-4][,][nNsSwWeE][a-zA-Z]{1,4}"); //robot can only be placed within 5x5 unit table
 	regex funcRegex("[a-zA-Z]{1,6}");
 
-	cin.clear();			//clean input buffer
-	getline(cin, input);	//accept user input with whitespace
+
+	if (newRobot.stringForTesting == "") //While not unit testing, behave as designed
+	{
+		cin.clear();			//clean input buffer
+		getline(cin, input);	//accept user input with whitespace
+	}
+	else
+	{
+		input = newRobot.stringForTesting;
+	}
 
 	if (input == "exit" || input == "e")
 	{
@@ -146,4 +154,22 @@ istream& operator>>(istream& aInstream, myRobot& newRobot)
 		}
 	}
 	return aInstream;
+}
+
+void myRobot::attachUnitTestString(string unitTestingString) 
+{
+	this->stringForTesting = unitTestingString;
+}
+
+short int myRobot::getX()
+{
+	return this->x;
+}
+short int myRobot::getY()
+{
+	return this->y;
+}
+string myRobot::getDir()
+{
+	return this->direction;
 }

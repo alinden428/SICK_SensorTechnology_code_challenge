@@ -37,3 +37,9 @@ set(source
 add_library(${This} STATIC ${source} ${Headers}) #//source folder already exists
 
 add_subdirectory (tests)
+
+# Add source to this project's executable.
+add_executable (main "code_challenge/code_challenge.cpp" "code_challenge/code_challenge.h" "code_challenge/main.cpp")
+
+# TODO: Add tests and install targets if needed.
+install (TARGETS code_challenge DESTINATION "code_challenge/bin")

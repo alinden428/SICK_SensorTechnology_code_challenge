@@ -19,9 +19,13 @@ public:
 	bool dontFall();
 	void rotate(string leftOrRight);
 	void report();
-	friend istream& operator>>(istream& aInstream, myRobot& newRobot);
+	friend istream& operator>>(istream& aInstream, myRobot& newRobot);	
+	void attachUnitTestString(string unitTestingString);
+	short int getX();
+	short int getY();
+	string getDir();
 private:
 	unsigned short int x;
 	unsigned short int y;
-	string direction;
+	string direction, stringForTesting;
 };
