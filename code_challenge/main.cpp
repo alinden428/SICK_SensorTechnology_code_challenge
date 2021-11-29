@@ -3,8 +3,7 @@
 // Created: 24/11/2021
 // Main function
 
-#include "code_challenge.h"
-#include "iostream"
+#include "code_challenge.h"\
 
 using namespace std;
  

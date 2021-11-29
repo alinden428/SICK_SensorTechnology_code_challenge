@@ -1,0 +1,6 @@
+C:/Users/Alex/Desktop/PROJECTS/build/CMakeFiles/INSTALL.dir
+C:/Users/Alex/Desktop/PROJECTS/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Alex/Desktop/PROJECTS/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Alex/Desktop/PROJECTS/build/code_challenge/CMakeFiles/code_challenge.dir
+C:/Users/Alex/Desktop/PROJECTS/build/code_challenge/CMakeFiles/INSTALL.dir
+C:/Users/Alex/Desktop/PROJECTS/build/tests/CMakeFiles/INSTALL.dir
